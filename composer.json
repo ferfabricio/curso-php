@@ -1,0 +1,15 @@
+{
+    "name": "ferfabricio/curso-php",
+    "description": "Exemplo utilizado no curso",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Fernando Fabricio dos Santos",
+            "email": "ferfabricio@gmail.com"
+        }
+    ],
+    "require": {
+        "phpunit/phpunit": "^6.1"
+    }
+}
