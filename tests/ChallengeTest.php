@@ -22,4 +22,22 @@ class ChallengeTest extends TestCase
         $this->assertTrue($challenge->exists(9));
         $this->assertTrue($challenge->exists(10));
     }
+
+    public function testNonExistingValue()
+    {
+        $challenge = new Challenge([0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]);
+        $this->assertFalse($challenge->exists(11));
+    }
+
+    public function testWithoutValues()
+    {
+        $challenge = new Challenge([]);
+        $this->assertFalse($challenge->exists(1));
+    }
+
+    public function testWithDuplicatedValues()
+    {
+        $challenge = new Challenge([0, 1, 2, 2]);
+        $this->assertTrue($challenge->exists(2));
+    }
 }
