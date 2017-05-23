@@ -1,0 +1,16 @@
+api:
+  image: nginx:latest
+  container_name: "demo-http-server"
+  volumes:
+      - ./app/:/code/app
+      - ./vhost/:/etc/nginx/conf.d/
+  links:
+      - php
+  ports:
+    - "80:80"
+
+php:
+  image: php:7.1-fpm
+  container_name: "demo-php"
+  volumes:
+  - ./app:/code/app
